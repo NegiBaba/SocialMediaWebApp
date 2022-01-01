@@ -9,9 +9,9 @@ try {
 } catch (e) {
   console.log(e);
 }
-mongoose.connection.on('error', () => {
-  throw new Error(`unable to connect to database: ${config.mongoUri}`)
-})
+// mongoose.connection.on('error', () => {
+//   throw new Error(`unable to connect to database: ${config.mongoUri}`)
+// })
 
 app.listen(config.port, function onStart(err) {
   if (err) {

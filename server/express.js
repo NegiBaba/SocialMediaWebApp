@@ -9,12 +9,12 @@ import cookieParser from "cookie-parser";
 
 import userRoutes from './routes/user.routes';
 import authRoutes from './routes/auth.routes';
-import devBundle from './devBundle';
 
 // for development mode only
 import devBundle from './devBundle';
 
 const CURRENT_WORKING_DIR = process.cwd();
+console.log(CURRENT_WORKING_DIR);
 const app = express();
 
 // for development mode only
@@ -27,7 +27,7 @@ app.use(compress());
 app.use(helmet());
 app.use(cors());
 
-app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')));
+app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 
 // mount routes
 app.use('/', userRoutes)
