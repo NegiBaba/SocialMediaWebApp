@@ -6,6 +6,8 @@ import { CardMedia } from "@material-ui/core";
 import { Typography } from "@material-ui/core";
 import unicornbikeImg from "./../assets/images/unicornbike.jpg";
 
+import { Link } from "react-router-dom";
+
 const userStyles = makeStyles(theme => ({
   card: {
     maxWidth: 600,
@@ -35,6 +37,7 @@ export default function Home() {
           Welcome to the Social Media App's home page.
         </Typography>
       </CardContent>
+      <Link to="/users">Users</Link>
     </Card>
   )
 }
