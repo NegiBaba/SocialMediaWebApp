@@ -1,5 +1,6 @@
-import { Button, Card, CardActions, CardContent, Icon, TextField, Typography } from "@material-ui/core";
+import { Button, Card, CardActions, CardContent, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Icon, TextField, Typography } from "@material-ui/core";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { create } from "./api-user";
 
 export default function Signup() {
@@ -66,6 +67,21 @@ export default function Signup() {
           onClick={clickSubmit} className={classes.submit}>Submit</Button>
         </CardActions>
       </Card>
+      <Dialog open={values.open} disa>
+        <DialogTitle>New Account</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            New account successfully created.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Link to="/signin">
+            <Button color="primary" autoFocus="autoFocus" variant="contained">
+              Sign In
+            </Button>
+          </Link>
+        </DialogActions>
+      </Dialog>
     </div>
   )
 }
